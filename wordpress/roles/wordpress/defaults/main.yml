@@ -5,9 +5,11 @@
 lamp_packages:
     - apache2
     - mysql-server
+    - mysql-client
     - php7.4
     - php7.4-mysql
     - libapache2-mod-php7.4
+    - phpmyadmin
     - python3-mysqldb
     - wget
 

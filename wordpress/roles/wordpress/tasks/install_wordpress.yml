@@ -8,19 +8,18 @@
     - php7.4-mysql
   notify: restart apache
 
-- name: Copy php.ini configuration file
-  become: yes
-  copy:
-    src: php.ini
-    dest: /etc/php/7.4/apache2/php.ini
-  notify: restart apache
-
 - name: restart apache
   become: yes
   service:
     name: apache2
     state: restarted
 
+- name: Copy php.ini configuration file
+  become: yes
+  copy:
+    src: php.ini
+    dest: /etc/php/7.4/apache2/php.ini
+  notify: restart apache
 
 
 - name: "[INSTALL WORDPRESS] - check if exist"
