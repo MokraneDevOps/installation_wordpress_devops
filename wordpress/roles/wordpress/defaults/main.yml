@@ -15,9 +15,9 @@ lamp_packages:
 
 # default variables for mysql
 
-mysql_db: "blog"
-mysql_user: "user1"
-mysql_password: "toto"
+mysql_db: "db_wordpress"
+mysql_user: "stage_mokrane"
+mysql_password: "stage_mokrane"
 
 
 # default wordpress source
