@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  wordpress:
+    image: wordpress:latest
+    ports:
+      - "8080:80"
+    environment:
+      WORDPRESS_DB_HOST: db:3306
+      WORDPRESS_DB_USER: stage_mokrane
+      WORDPRESS_DB_PASSWORD: stage_mokrane
+      WORDPRESS_DB_NAME: db_wordpress
+    volumes:
+      - ./wordpress:/var/www/html
+
+  db:
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: vagrant
+      MYSQL_DATABASE: db_wordpress
+      MYSQL_USER: stage_mokrane
+      MYSQL_PASSWORD: stage_mokrane
+    volumes:
+      - db_data:/var/lib/mysql
+
+volumes:
+  db_data:
